@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "./App.module.css";
+// import styles from "./App.module.css";
 
 function formatTimer(timer) {
   const seconds = timer % 60;
@@ -38,17 +38,13 @@ function App() {
   }, [isActive]);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.stopwatch}>
+    <div>
+      <div>
         <h1>Stopwatch</h1>
-        <div className={styles.time}>Time {formatTimer(timer)} </div>
-        <div className={styles.buttonContainer}>
-          <button className={styles.button} onClick={handleStart}>
-            {!isActive ? "Start" : "Stop"}
-          </button>
-          <button className={styles.button} onClick={handleReset}>
-            Reset
-          </button>
+        <div>Time {formatTimer(timer)} </div>
+        <div>
+          <button onClick={handleStart}>{!isActive ? "Start" : "Stop"}</button>
+          <button onClick={handleReset}>Reset</button>
         </div>
       </div>
     </div>
