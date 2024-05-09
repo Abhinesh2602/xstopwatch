@@ -14,7 +14,7 @@ function App() {
   const [isActive, seIsActive] = useState(false);
 
   function handleStart() {
-    seIsActive(true);
+    seIsActive((prev) => !prev);
   }
 
   function handleReset() {
@@ -44,7 +44,7 @@ function App() {
         <div className={styles.time}>Time {formatTimer(timer)} </div>
         <div className={styles.buttonContainer}>
           <button className={styles.button} onClick={handleStart}>
-            Start
+            {!isActive ? "Start" : "Stop"}
           </button>
           <button className={styles.button} onClick={handleReset}>
             Reset
