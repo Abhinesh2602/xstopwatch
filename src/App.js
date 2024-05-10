@@ -41,7 +41,7 @@ function App() {
     <div>
       <div>
         <h1>Stopwatch</h1>
-        <div>Time {formatTimer(timer)} </div>
+        <div>Time: {formatTimer(timer)} </div>
         <div>
           <button onClick={handleStart}>{!isActive ? "Start" : "Stop"}</button>
           <button onClick={handleReset}>Reset</button>
